@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_storehouse"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ckkj.docproject.ui.StorehouseActivity"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <LinearLayout
+        android:id="@+id/cupboard"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#e1e0de"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@mipmap/cupboard"/>
+        <TextView
+            android:paddingLeft="50dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:text="柜架管理"/>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/ic_arrow_right"/>
+    </LinearLayout>
+
+   <!-- <LinearLayout
+        android:id="@+id/check"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#e1e0de"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@mipmap/check"/>
+        <TextView
+            android:paddingLeft="50dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:text="库房盘点"/>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/ic_arrow_right"/>
+    </LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/hemiture"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#e1e0de"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@mipmap/humiture"/>
+        <TextView
+            android:paddingLeft="50dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:text="温湿度管理"/>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/ic_arrow_right"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/protect"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#e1e0de"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@mipmap/protect"/>
+        <TextView
+            android:paddingLeft="50dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:text="保护登记"/>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/ic_arrow_right"/>
+    </LinearLayout>
+
+
+</LinearLayout>

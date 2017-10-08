@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ckkj.docproject">
+
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:name=".app.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.home.WelcomeActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.login.LoginActivity" />
+        <activity
+            android:name=".ui.archives.ArchivesActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.archives.SearchActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.archives.ArchivesDetailActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".ui.download.DownloadManagerActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.cupboard.StorehouseActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 柜架 -->
+        <activity
+            android:name=".ui.cupboard.cup.CupBoardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.cupboard.cup.CupBoardDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.cupboard.cup.SearchCupBoardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.cupboard.cup.AddCupBoardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.cupboard.cup.CupBoardResultActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 温湿度 -->
+        <activity
+            android:name=".ui.cupboard.humiture.HumitureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.cupboard.humiture.HumitureDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.cupboard.humiture.AddHumitureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.cupboard.humiture.HumitureResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.cupboard.humiture.SearchHumitureActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 保护登记 -->
+        <activity
+            android:name=".ui.cupboard.protect.ProtectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.cupboard.protect.ProtectDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.cupboard.protect.AddProtectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.cupboard.protect.ProtectResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.cupboard.protect.SearchProtectActivity"
+            android:screenOrientation="portrait" />
+
+        <!--文件审核-->
+        <activity
+            android:name=".ui.examine.ExamineActivity"
+            android:screenOrientation="portrait" />
+        <!--实体档案服务-->
+        <activity
+            android:name=".ui.examine.entitive.EntitiveDetilsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.examine.entitive.EntitiveActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.examine.entitive.NextCheckedActivity" />
+
+        <!--现行文件审核-->
+        <activity android:name=".ui.examine.presenters.PresenterActivity"
+            android:screenOrientation="portrait" ></activity>
+        <activity android:name=".ui.examine.presenters.PresenterDetilsActivity"
+            android:screenOrientation="portrait" ></activity>
+        <activity android:name=".ui.examine.presenters.NextCheckedActivity"
+            android:screenOrientation="portrait" ></activity>
+
+        <!--预归审核-->
+        <activity android:name=".ui.examine.preprocess.NextCheckedActivity"
+            android:screenOrientation="portrait" ></activity>
+        <activity android:name=".ui.examine.preprocess.PreprocessDetilsActivity"
+            android:screenOrientation="portrait" ></activity>
+        <activity android:name=".ui.examine.preprocess.PreprocessActivity"
+            android:screenOrientation="portrait" ></activity>
+
+        <!--预归库审核-->
+        <activity android:name=".ui.examine.preprocessstoreroom.NextCheckedActivity"
+            android:screenOrientation="portrait" ></activity>
+        <activity android:name=".ui.examine.preprocessstoreroom.PreprocessStoreroomDetilsActivity"
+            android:screenOrientation="portrait" ></activity>
+        <activity android:name=".ui.examine.preprocessstoreroom.PreprocessStoreroomActivity"
+            android:screenOrientation="portrait" ></activity>
+
+
+
+    </application>
+
+</manifest>

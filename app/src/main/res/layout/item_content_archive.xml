@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            >
+
+    <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+
+        <ImageView
+            android:id="@+id/archive_iv"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/archiveNum_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_toEndOf="@id/archive_iv"
+            android:layout_toRightOf="@id/archive_iv"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="无-A-10年-1992-0164"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:id="@+id/archiveName_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/archiveNum_tv"
+            android:layout_toEndOf="@id/archive_iv"
+            android:layout_toRightOf="@id/archive_iv"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="转发省政府办公厅印发突发事件信息处理办法的通知"
+            android:textSize="17sp"/>
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

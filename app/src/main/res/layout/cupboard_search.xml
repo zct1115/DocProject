@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:titleTextColor="@color/white">
+    </android.support.v7.widget.Toolbar>
+
+
+
+    <LinearLayout
+        android:paddingTop="100dp"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:paddingBottom="50dp"
+            android:src="@mipmap/cupboard"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:paddingBottom="20dp"
+            android:text="请选择搜索类型"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:id="@+id/rg">
+
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="柜架名称"
+                android:id="@+id/rb1"
+                android:textSize="@dimen/RadioButton_size"
+                android:checked="true"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="柜架编号"
+                android:textSize="@dimen/RadioButton_size"
+                android:id="@+id/rb2"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="库房位置"
+                android:textSize="@dimen/RadioButton_size"
+                android:id="@+id/rb3"
+               />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="所在库房名称"
+                android:textSize="@dimen/RadioButton_size"
+                android:id="@+id/rb4"
+               />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="所在库房号"
+                android:textSize="@dimen/RadioButton_size"
+                android:id="@+id/rb5"
+           />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="备注"
+                android:textSize="@dimen/RadioButton_size"
+                android:id="@+id/rb6"
+               />
+
+        </RadioGroup>
+        <EditText
+            android:id="@+id/input"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:hint="请输入查询条件"/>
+        <Button
+            android:id="@id/search"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="查询"/>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/content_layout"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar"></include>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:paddingTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp_10"
+                android:gravity="center"
+                android:layout_height="80dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/item_cupboard"
+                    android:paddingLeft="145dp"
+                    android:text="序号：" />
+
+                <TextView
+                    android:id="@+id/position"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/item_cupboard"
+                    android:text="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp_10"
+                android:gravity="center"
+                android:layout_height="80dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:paddingLeft="90dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/item_cupboard"
+                        android:text="测定日期：" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/humcheckData"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:hint="@string/time"
+                    android:textSize="@dimen/item_cupboard" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp_10"
+                android:gravity="center"
+                android:layout_height="80dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:paddingLeft="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#F00"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/item_cupboard"
+                        android:text="上午库房温度：" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/hum_amTemp"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/item_cupboard" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp_10"
+                android:gravity="center"
+                android:layout_height="80dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:paddingLeft="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#F00"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/item_cupboard"
+                        android:text="上午库房湿度：" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/hum_amHumidity"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/item_cupboard" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp_10"
+                android:gravity="center"
+                android:layout_height="80dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:paddingLeft="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#F00"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/item_cupboard"
+                        android:text="下午库房温度：" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/hum_pmTemp"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/item_cupboard" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp_10"
+                android:gravity="center"
+                android:layout_height="80dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:paddingLeft="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#F00"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/item_cupboard"
+                        android:text="下午库房湿度：" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/hum_pmHumidity"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/item_cupboard" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp_10"
+                android:gravity="center"
+                android:layout_height="80dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:paddingLeft="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#F00"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/item_cupboard"
+                        android:text="上午库外温度：" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/huminTemp"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/item_cupboard" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp_10"
+                android:gravity="center"
+                android:layout_height="80dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:paddingLeft="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#F00"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/item_cupboard"
+                        android:text="上午库外湿度：" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/huminHumidity"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/item_cupboard" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp_10"
+                android:gravity="center"
+                android:layout_height="80dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:paddingLeft="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#F00"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/item_cupboard"
+                        android:text="下午库外温度：" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/humoutTemp"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/item_cupboard" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp_10"
+                android:gravity="center"
+                android:layout_height="80dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:paddingLeft="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#F00"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/item_cupboard"
+                        android:text="下午库外湿度：" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/humoutHumidity"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/item_cupboard" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp_10"
+                android:gravity="center"
+                android:layout_height="80dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:paddingLeft="90dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/item_cupboard"
+                        android:text="采取措施：" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/hum_taken"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/item_cupboard" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp_10"
+                android:gravity="center"
+                android:layout_height="80dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:paddingLeft="65dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/item_cupboard"
+                        android:text="库房保管人：" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/humcustodian"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/item_cupboard" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp_10"
+                android:layout_height="120dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/item_cupboard"
+                    android:paddingLeft="145dp"
+                    android:text="备注：" />
+
+                <EditText
+                    android:id="@+id/humremark"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:maxLines="3"
+                    android:inputType="textMultiLine"
+                    android:scrollbars="vertical"
+                    android:textSize="@dimen/item_cupboard" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="50dp"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/update_humiture"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="#428bca"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:textSize="@dimen/item_cupboard"
+                    android:text="修改" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"></LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <!-- <LinearLayout
+         android:layout_width="match_parent"
+         android:padding="@dimen/dp_10"
+         android:gravity="center"
+         android:layout_height="80dp">
+         <TextView
+             android:layout_width="0dp"
+             android:layout_weight="2"
+             android:layout_height="wrap_content"
+             android:textSize="@dimen/item_cupboard"
+             android:paddingLeft="50dp"
+             android:text="序号："/>
+         <TextView
+             android:id="@+id/position"
+             android:layout_width="0dp"
+             android:layout_weight="3"
+             android:layout_height="wrap_content"
+             android:textSize="@dimen/item_cupboard"
+             android:text="1"/>
+     </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:padding="@dimen/dp_10"
+          android:gravity="center"
+          android:layout_height="80dp">
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="2"
+              android:layout_height="wrap_content"
+              android:textSize="@dimen/item_cupboard"
+              android:paddingLeft="50dp"
+              android:text="测定日期："/>
+          <EditText
+              android:id="@+id/checkData"
+              android:layout_width="0dp"
+              android:layout_weight="3"
+              android:layout_height="match_parent"
+              android:textSize="@dimen/item_cupboard"
+              android:text="2017年"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:padding="@dimen/dp_10"
+          android:gravity="center"
+          android:layout_height="80dp">
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="2"
+              android:layout_height="wrap_content"
+              android:textSize="@dimen/item_cupboard"
+              android:paddingLeft="50dp"
+              android:text="测定时间："/>
+          <EditText
+              android:id="@+id/checkTime"
+              android:layout_width="0dp"
+              android:layout_weight="3"
+              android:layout_height="match_parent"
+              android:textSize="@dimen/item_cupboard"
+              android:text="19:20:00"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:padding="@dimen/dp_10"
+          android:gravity="center"
+          android:layout_height="80dp">
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="2"
+              android:layout_height="wrap_content"
+              android:textSize="@dimen/item_cupboard"
+              android:paddingLeft="50dp"
+              android:text="库房温度°C："/>
+          <EditText
+              android:id="@+id/inTemp"
+              android:layout_width="0dp"
+              android:layout_weight="3"
+              android:layout_height="match_parent"
+              android:textSize="@dimen/item_cupboard"
+              android:text="20"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:padding="@dimen/dp_10"
+          android:gravity="center"
+          android:layout_height="80dp">
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="2"
+              android:layout_height="wrap_content"
+              android:textSize="@dimen/item_cupboard"
+              android:paddingLeft="50dp"
+              android:text="库房湿度："/>
+          <EditText
+              android:id="@+id/inHumidity"
+              android:layout_width="0dp"
+              android:layout_weight="3"
+              android:layout_height="match_parent"
+              android:textSize="@dimen/item_cupboard"
+              android:text="19"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:padding="@dimen/dp_10"
+          android:gravity="center"
+          android:layout_height="80dp">
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="2"
+              android:layout_height="wrap_content"
+              android:textSize="@dimen/item_cupboard"
+              android:paddingLeft="50dp"
+              android:text="库外温度°C："/>
+          <EditText
+              android:id="@+id/outTemp"
+              android:layout_width="0dp"
+              android:layout_weight="3"
+              android:layout_height="match_parent"
+              android:textSize="@dimen/item_cupboard"
+              android:text="21"/>
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:padding="@dimen/dp_10"
+          android:gravity="center"
+          android:layout_height="80dp">
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="2"
+              android:layout_height="wrap_content"
+              android:textSize="@dimen/item_cupboard"
+              android:paddingLeft="50dp"
+              android:text="库外湿度："/>
+          <EditText
+              android:id="@+id/outHumidity"
+              android:layout_width="0dp"
+              android:layout_weight="3"
+              android:layout_height="match_parent"
+              android:textSize="@dimen/item_cupboard"
+              android:text="21"/>
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:padding="@dimen/dp_10"
+          android:gravity="center"
+          android:layout_height="80dp">
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="2"
+              android:layout_height="wrap_content"
+              android:textSize="@dimen/item_cupboard"
+              android:paddingLeft="50dp"
+              android:text="当时库房保管人："/>
+          <EditText
+              android:id="@+id/custodian"
+              android:layout_width="0dp"
+              android:layout_weight="3"
+              android:layout_height="match_parent"
+              android:textSize="@dimen/item_cupboard"
+              android:text="xxx"/>
+      </LinearLayout>
+
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:padding="@dimen/dp_10"
+          android:layout_height="120dp">
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="2"
+              android:layout_height="wrap_content"
+              android:textSize="@dimen/item_cupboard"
+              android:paddingLeft="50dp"
+              android:text="备注："/>
+          <EditText
+              android:id="@+id/remark"
+              android:layout_width="0dp"
+              android:layout_weight="3"
+              android:layout_height="match_parent"
+              android:maxLines="3"
+              android:inputType="textMultiLine"
+              android:scrollbars="vertical"
+              android:textSize="@dimen/item_cupboard"
+              android:text=""/>
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingTop="50dp"
+          android:orientation="horizontal">
+          <Button
+              android:id="@+id/change"
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:background="#428bca"
+              android:layout_height="wrap_content"
+              android:textColor="#fff"
+              android:layout_marginLeft="20dp"
+              android:layout_marginRight="20dp"
+              android:textSize="@dimen/item_cupboard"
+              android:text="修改"/>
+
+      </LinearLayout>
+  -->
+
+
+
+
+
+
+
+</LinearLayout>
