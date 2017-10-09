@@ -148,6 +148,16 @@ public class Urls {
     //逐级审核
     public final String URL_PREPROCESS_STOREROOM_NEXTCHECKED="app/prepareLibraryAppController/auditTask";
 
+    /*---------------------------------------------------------------------------------------------------------*/
+    //介质审核
+    public final String URL_MEDIUM=BASE_URL+"app/mediumAppController/getAudit";
+
+    //审核权限接口
+    public final String URL_MEDIUM_CHECKED="app/prepareLibraryAppController/checkExamineUser";
+
+    //逐级审核
+    public final String URL_MEDIUM_NEXTCHECKED="app/prepareLibraryAppController/auditTask";
+
 
 
 }

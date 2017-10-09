@@ -132,7 +132,7 @@
         <activity android:name=".ui.examine.preprocess.PreprocessActivity"
             android:screenOrientation="portrait" ></activity>
 
-        <!--预归库审核-->
+        <!--预归库 审核-->
         <activity android:name=".ui.examine.preprocessstoreroom.NextCheckedActivity"
             android:screenOrientation="portrait" ></activity>
         <activity android:name=".ui.examine.preprocessstoreroom.PreprocessStoreroomDetilsActivity"

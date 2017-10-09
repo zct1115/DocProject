@@ -1,4 +1,4 @@
-package com.ckkj.docproject.ui.examine.presenters;
+package com.ckkj.docproject.ui.examine.medium;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,9 +14,11 @@ import android.widget.TextView;
 
 import com.ckkj.docproject.R;
 import com.ckkj.docproject.base.BaseActivity;
-import com.ckkj.docproject.bean.examine.Presernters;
-import com.ckkj.docproject.contract.PresenterContract;
+import com.ckkj.docproject.bean.examine.Medium;
+import com.ckkj.docproject.contract.MediumContract;
+import com.ckkj.docproject.presenter.examine.MediumPresenter;
 import com.ckkj.docproject.presenter.examine.PresentersPresenter;
+import com.ckkj.docproject.ui.examine.presenters.PresenterActivity;
 
 import java.util.List;
 
@@ -27,7 +29,7 @@ import butterknife.OnClick;
  * Created by Ting on 2017/9/13.
  */
 
-public class PresenterDetilsActivity extends BaseActivity<PresenterContract.Presenter> implements PresenterContract.View {
+public class MediumDetilsActivity extends BaseActivity<MediumContract.Presenter> implements MediumContract.View {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.e_taskName)
@@ -51,15 +53,15 @@ public class PresenterDetilsActivity extends BaseActivity<PresenterContract.Pres
     @BindView(R.id.content_layout)
     LinearLayout contentLayout;
 
-    public Presernters.DataBean dataBean;
+    public Medium.DataBean dataBean;
 
     @Override
     public int getContentViewId() {
         return R.layout.entitive_detail;
     }
 
-    public static void start(Context context, int position, Presernters.DataBean databean) {
-        Intent intent = new Intent(context, PresenterDetilsActivity.class);
+    public static void start(Context context, int position, Medium.DataBean databean) {
+        Intent intent = new Intent(context, MediumDetilsActivity.class);
         intent.putExtra("position",position);
         intent.putExtra("databean",databean);
         context.startActivity(intent);
@@ -68,7 +70,7 @@ public class PresenterDetilsActivity extends BaseActivity<PresenterContract.Pres
     protected void initAllMembers(Bundle savedInstanceState) {
         initToolbar("现行文件详情");
         Intent intent = getIntent();
-        dataBean = (Presernters.DataBean) intent.getSerializableExtra("databean");
+        dataBean = (Medium.DataBean) intent.getSerializableExtra("databean");
         init(dataBean);
     }
     @Override
@@ -88,11 +90,11 @@ public class PresenterDetilsActivity extends BaseActivity<PresenterContract.Pres
     }
 
     @Override
-    protected PresenterContract.Presenter getPresenter() {
-        return new PresentersPresenter(this);
+    protected MediumContract.Presenter getPresenter() {
+        return new MediumPresenter(this);
     }
 
-    private void init(Presernters.DataBean dataBean) {
+    private void init(Medium.DataBean dataBean) {
         if(dataBean.getTaskName().isEmpty()){
             eTaskName.setText("");
         }else {
@@ -157,7 +159,7 @@ public class PresenterDetilsActivity extends BaseActivity<PresenterContract.Pres
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PresenterDetilsActivity.this,PresenterActivity.class));
+                startActivity(new Intent(MediumDetilsActivity.this,PresenterActivity.class));
                 finish();
             }
         });
@@ -165,12 +167,12 @@ public class PresenterDetilsActivity extends BaseActivity<PresenterContract.Pres
     }
 
     @Override
-    public void setPresenterData(List<Presernters.DataBean> data, int total, int pageNum) {
+    public void setMediumData(List<Medium.DataBean> data, int total, int pageNum) {
 
     }
 
     @Override
-    public void getPresenterDataFail(String message) {
+    public void getMediumDataFail(String message) {
 
     }
 

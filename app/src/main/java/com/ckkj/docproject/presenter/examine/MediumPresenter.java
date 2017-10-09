@@ -3,12 +3,10 @@ package com.ckkj.docproject.presenter.examine;
 import android.app.Activity;
 import android.content.Context;
 
-import com.ckkj.docproject.bean.examine.Preprocess;
-import com.ckkj.docproject.callback.examine.PreprocessCallBack;
-import com.ckkj.docproject.contract.PreprocessContract;
-import com.ckkj.docproject.contract.PreprocessStoreroomContract;
-import com.ckkj.docproject.model.examine.PreprocessModel;
-import com.ckkj.docproject.model.examine.PreprocessStoreroomModel;
+import com.ckkj.docproject.bean.examine.Medium;
+import com.ckkj.docproject.callback.examine.MediumCallBack;
+import com.ckkj.docproject.contract.MediumContract;
+import com.ckkj.docproject.model.examine.MediumModel;
 import com.ckkj.docproject.utils.NetUtils;
 
 import java.util.List;
@@ -17,15 +15,15 @@ import java.util.List;
  * Created by Ting on 2017/9/13.
  */
 
-public class PreprocessStoreroomPresenter implements PreprocessStoreroomContract.Presenter {
+public class MediumPresenter implements MediumContract.Presenter {
 
-    private PreprocessStoreroomModel preprocessModel;
-    private PreprocessStoreroomContract.View mview;
+    private MediumModel mediumModel;
+    private MediumContract.View mview;
 
 
-    public PreprocessStoreroomPresenter(PreprocessStoreroomContract.View view) {
+    public MediumPresenter(MediumContract.View view) {
         mview=view;
-        preprocessModel=new PreprocessStoreroomModel((Activity) mview);
+        mediumModel=new MediumModel((Activity) mview);
     }
 
 
@@ -37,10 +35,10 @@ public class PreprocessStoreroomPresenter implements PreprocessStoreroomContract
      */
     @Override
     public void getData(String pageNum, String limits) {
-        preprocessModel.getPreprocessStoreroom(pageNum, limits, new PreprocessCallBack() {
+        mediumModel.getMedium(pageNum, limits, new MediumCallBack() {
             @Override
-            public void success(List<Preprocess.DataBean> data, int total, int pageNum) {
-                 mview.setPreprocessStoreroomData(data,total,pageNum);
+            public void success(List<Medium.DataBean> data, int total, int pageNum) {
+                 mview.setMediumData(data,total,pageNum);
             }
 
             @Override
@@ -56,9 +54,9 @@ public class PreprocessStoreroomPresenter implements PreprocessStoreroomContract
             @Override
             public void error(Exception e) {
                 if (!NetUtils.hasNetWorkConection((Context) mview)) {
-                    mview.getPreprocessStoreroomDataFail("当前无网络，请保持网络连接！");
+                    mview.getMediumDataFail("当前无网络，请保持网络连接！");
                 } else {
-                    mview.getPreprocessStoreroomDataFail(e.getMessage());
+                    mview.getMediumDataFail(e.getMessage());
                 }
             }
         });
@@ -71,9 +69,9 @@ public class PreprocessStoreroomPresenter implements PreprocessStoreroomContract
      * @param examine_processId    任务标识id
      */
     public void checked(String examine_processId){
-        preprocessModel.checked(examine_processId, new PreprocessCallBack() {
+        mediumModel.checked(examine_processId, new MediumCallBack() {
             @Override
-            public void success(List<Preprocess.DataBean> data, int total, int pageNum) {
+            public void success(List<Medium.DataBean> data, int total, int pageNum) {
 
             }
 
@@ -85,9 +83,9 @@ public class PreprocessStoreroomPresenter implements PreprocessStoreroomContract
             @Override
             public void error(Exception e) {
                 if (!NetUtils.hasNetWorkConection((Context) mview)) {
-                    mview.getPreprocessStoreroomDataFail("当前无网络，请保持网络连接！");
+                    mview.getMediumDataFail("当前无网络，请保持网络连接！");
                 } else {
-                    mview.getPreprocessStoreroomDataFail(e.getMessage());
+                    mview.getMediumDataFail(e.getMessage());
                 }
             }
 
@@ -109,9 +107,9 @@ public class PreprocessStoreroomPresenter implements PreprocessStoreroomContract
      * @param rejectReason 备注
      */
     public void nextchecked(String examine_id,String examine_processId,String currentTaskId,String auditState,String rejectReason){
-        preprocessModel.nextchecked(examine_id, examine_processId, currentTaskId, auditState, rejectReason, new PreprocessCallBack() {
+        mediumModel.nextchecked(examine_id, examine_processId, currentTaskId, auditState, rejectReason, new MediumCallBack() {
             @Override
-            public void success(List<Preprocess.DataBean> data, int total, int pageNum) {
+            public void success(List<Medium.DataBean> data, int total, int pageNum) {
 
             }
 
@@ -123,9 +121,9 @@ public class PreprocessStoreroomPresenter implements PreprocessStoreroomContract
             @Override
             public void error(Exception e) {
                 if (!NetUtils.hasNetWorkConection((Context) mview)) {
-                    mview.getPreprocessStoreroomDataFail("当前无网络，请保持网络连接！");
+                    mview.getMediumDataFail("当前无网络，请保持网络连接！");
                 } else {
-                    mview.getPreprocessStoreroomDataFail(e.getMessage());
+                    mview.getMediumDataFail(e.getMessage());
                 }
             }
 

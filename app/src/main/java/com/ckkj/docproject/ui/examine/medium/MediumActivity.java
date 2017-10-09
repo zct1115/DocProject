@@ -1,4 +1,4 @@
-package com.ckkj.docproject.ui.examine.presenters;
+package com.ckkj.docproject.ui.examine.medium;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -13,18 +13,19 @@ import android.widget.LinearLayout;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.ckkj.docproject.R;
-import com.ckkj.docproject.adapter.PresentersAdapter;
+import com.ckkj.docproject.adapter.MediumAdapter;
 import com.ckkj.docproject.base.BaseActivity;
-import com.ckkj.docproject.bean.examine.Presernters;
-import com.ckkj.docproject.contract.PresenterContract;
-import com.ckkj.docproject.presenter.examine.PresentersPresenter;
+import com.ckkj.docproject.bean.examine.Medium;
+import com.ckkj.docproject.contract.MediumContract;
+import com.ckkj.docproject.presenter.examine.MediumPresenter;
 import com.ckkj.docproject.ui.examine.ExamineActivity;
+import com.ckkj.docproject.ui.examine.medium.MediumDetilsActivity;
 
 import java.util.List;
 
 import butterknife.BindView;
 
-public class PresenterActivity extends BaseActivity<PresenterContract.Presenter> implements PresenterContract.View {
+public class MediumActivity extends BaseActivity<MediumContract.Presenter> implements MediumContract.View {
 
 
     @BindView(R.id.toolbar)
@@ -40,7 +41,7 @@ public class PresenterActivity extends BaseActivity<PresenterContract.Presenter>
     private int mTotal = 1;
     private int pageNum = 1;
     private final int mLimits = 10;
-    private PresentersAdapter presenterAdapter = new PresentersAdapter();
+    private MediumAdapter presenterAdapter = new MediumAdapter();
 
     @Override
     public int getContentViewId() {
@@ -58,9 +59,9 @@ public class PresenterActivity extends BaseActivity<PresenterContract.Presenter>
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Object object = adapter.getItem(position);
-                Presernters.DataBean databean = object instanceof Presernters.DataBean ? ((Presernters.DataBean) object) : null;
+                Medium.DataBean databean = object instanceof Medium.DataBean ? ((Medium.DataBean) object) : null;
                 if (databean != null) {
-                    PresenterDetilsActivity.start(PresenterActivity.this, position, databean);
+                    MediumDetilsActivity.start(MediumActivity.this, position, databean);
                 }
             }
         });
@@ -100,8 +101,8 @@ public class PresenterActivity extends BaseActivity<PresenterContract.Presenter>
     }
 
     @Override
-    protected PresenterContract.Presenter getPresenter() {
-        return new PresentersPresenter(this);
+    protected MediumContract.Presenter getPresenter() {
+        return new MediumPresenter(this);
     }
 
     @Override
@@ -117,7 +118,7 @@ public class PresenterActivity extends BaseActivity<PresenterContract.Presenter>
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PresenterActivity.this, ExamineActivity.class));
+                startActivity(new Intent(MediumActivity.this, ExamineActivity.class));
                 finish();
             }
         });
@@ -126,7 +127,7 @@ public class PresenterActivity extends BaseActivity<PresenterContract.Presenter>
     }
 
     @Override
-    public void setPresenterData(List<Presernters.DataBean> data, int total, int pagNum) {
+    public void setMediumData(List<Medium.DataBean> data, int total, int pagNum) {
         presenterAdapter.setEmptyView(R.layout.rec_empty_view);
         mTotal = total;
         pag = pagNum;
@@ -147,7 +148,7 @@ public class PresenterActivity extends BaseActivity<PresenterContract.Presenter>
     }
 
     @Override
-    public void getPresenterDataFail(String message) {
+    public void getMediumDataFail(String message) {
 
     }
 

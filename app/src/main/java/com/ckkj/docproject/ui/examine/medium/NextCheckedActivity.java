@@ -1,4 +1,4 @@
-package com.ckkj.docproject.ui.examine.presenters;
+package com.ckkj.docproject.ui.examine.medium;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,9 +17,10 @@ import android.widget.TextView;
 
 import com.ckkj.docproject.R;
 import com.ckkj.docproject.base.BaseActivity;
-import com.ckkj.docproject.bean.examine.Presernters;
-import com.ckkj.docproject.contract.PresenterContract;
-import com.ckkj.docproject.presenter.examine.PresentersPresenter;
+import com.ckkj.docproject.bean.examine.Medium;
+import com.ckkj.docproject.contract.MediumContract;
+import com.ckkj.docproject.presenter.examine.MediumPresenter;
+import com.ckkj.docproject.ui.examine.medium.MediumActivity;
 
 import org.feezu.liuli.timeselector.TimeSelector;
 import org.feezu.liuli.timeselector.Utils.DateUtil;
@@ -31,7 +32,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class NextCheckedActivity extends BaseActivity<PresenterContract.Presenter> implements PresenterContract.View {
+public class NextCheckedActivity extends BaseActivity<MediumContract.Presenter> implements MediumContract.View {
 
 
     @BindView(R.id.toolbar)
@@ -51,7 +52,7 @@ public class NextCheckedActivity extends BaseActivity<PresenterContract.Presente
     @BindView(R.id.e_download)
     CheckBox eDownload;
 
-    public Presernters.DataBean dataBean;
+    public Medium.DataBean dataBean;
     private List<String> data;
     private ArrayAdapter adapter;
     private String auditState = "AGREE";
@@ -69,16 +70,16 @@ public class NextCheckedActivity extends BaseActivity<PresenterContract.Presente
     protected void initAllMembers(Bundle savedInstanceState) {
         initToolbar("逐级审核");
         Intent intent = getIntent();
-        dataBean = (Presernters.DataBean) intent.getSerializableExtra("databean");
+        dataBean = (Medium.DataBean) intent.getSerializableExtra("databean");
         init(dataBean);
     }
 
     @Override
-    protected PresenterContract.Presenter getPresenter() {
-        return new PresentersPresenter(this);
+    protected MediumContract.Presenter getPresenter() {
+        return new MediumPresenter(this);
     }
 
-    private void init(Presernters.DataBean dataBean) {
+    private void init(Medium.DataBean dataBean) {
         ePreTaskName.setText(dataBean.getUpdateUser());
         data = new ArrayList<String>();
         data.add("同意");
@@ -106,7 +107,7 @@ public class NextCheckedActivity extends BaseActivity<PresenterContract.Presente
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(NextCheckedActivity.this, PresenterActivity.class));
+                startActivity(new Intent(NextCheckedActivity.this, MediumActivity.class));
                 finish();
             }
         });
@@ -115,12 +116,12 @@ public class NextCheckedActivity extends BaseActivity<PresenterContract.Presente
     }
 
     @Override
-    public void setPresenterData(List<Presernters.DataBean> data, int total, int pageNum) {
+    public void setMediumData(List<Medium.DataBean> data, int total, int pageNum) {
 
     }
 
     @Override
-    public void getPresenterDataFail(String message) {
+    public void getMediumDataFail(String message) {
 
     }
 
@@ -167,7 +168,7 @@ public class NextCheckedActivity extends BaseActivity<PresenterContract.Presente
 
                 time = eTime.getText().toString();
                 String rejectReason = eRejectReason.getText().toString();
-                mPresenter.nextchecked(dataBean.getExamine_id(), dataBean.getExamine_processId(), dataBean.getCurrentTaskId(), auditState, rejectReason, download);
+                mPresenter.nextchecked(dataBean.getExamine_id(), dataBean.getExamine_processId(), dataBean.getCurrentTaskId(), auditState, rejectReason);
                 break;
             case R.id.no:
                 break;
@@ -191,7 +192,7 @@ public class NextCheckedActivity extends BaseActivity<PresenterContract.Presente
         }
     }
 
-    public static void start(Context context, Presernters.DataBean dataBean) {
+    public static void start(Context context, Medium.DataBean dataBean) {
         Intent intent = new Intent(context, NextCheckedActivity.class);
         intent.putExtra("databean", dataBean);
         context.startActivity(intent);

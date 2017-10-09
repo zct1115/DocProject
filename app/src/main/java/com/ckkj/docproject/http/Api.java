@@ -9,19 +9,15 @@ import com.ckkj.docproject.bean.examine.Entitive;
 import com.ckkj.docproject.bean.examine.EntitiveDetils;
 import com.ckkj.docproject.bean.examine.Preprocess;
 import com.ckkj.docproject.bean.examine.Presernters;
-import com.ckkj.docproject.callback.cupboard.CupBoardDataCallBack;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheMode;
 import com.lzy.okgo.callback.AbsCallback;
 
-import  com.ckkj.docproject.bean.ArchivesAttachment;
 import  com.ckkj.docproject.bean.ArchivesCatalogue;
 import  com.ckkj.docproject.bean.ArchivesData;
 import  com.ckkj.docproject.bean.ArchivesDetail;
 import  com.ckkj.docproject.bean.User;
 import  com.ckkj.docproject.callback.DialogCallBack;
-
-import java.util.List;
 
 
 /**
@@ -505,6 +501,43 @@ public class Api {
     //逐级审核
     public static void preprocessstoreroomnextchecked(String examine_id,String examine_processId,String currentTaskId,String auditState,String rejectReason,DialogCallBack<Preprocess> callback){
         OkGo.<Preprocess>post(sUrls.URL_PREPROCESS_NEXTCHECKED)
+                .tag(sUrls.URL_PREPROCESS_NEXTCHECKED)
+                .cacheKey("cachePostKey")
+                .cacheMode(CacheMode.DEFAULT)
+                .params("examine_id",examine_id)
+                .params("examine_processId",examine_processId)
+                .params("currentTaskId",currentTaskId)
+                .params("auditState",auditState)
+                .params("rejectReason",rejectReason)
+                .execute(callback);
+    }
+
+     /*--------------------------------------------------------------------------------------------------*/
+
+    //介质审核
+    public static void mediuminfo(String pageNum, String mLimits, DialogCallBack<Medium> callback){
+        OkGo.<Medium>post(sUrls.URL_PREPROCESS)
+                .tag(sUrls.URL_PREPROCESS)
+                .cacheKey("cachePostKey")
+                .cacheMode(CacheMode.DEFAULT)
+                .params("pageNum",pageNum)
+                .params("mLimits",mLimits)
+                .execute(callback);
+    }
+
+    //审核权限接口
+    public static void mediumchecked(String examine_processId,DialogCallBack<Medium> callback){
+        OkGo.<Medium>post(sUrls.URL_PREPROCESS_CHECKED)
+                .tag(sUrls.URL_PREPROCESS_CHECKED)
+                .cacheKey("cachePostKey")
+                .cacheMode(CacheMode.DEFAULT)
+                .params("examine_processId",examine_processId)
+                .execute(callback);
+    }
+
+    //逐级审核
+    public static void mediumnextchecked(String examine_id,String examine_processId,String currentTaskId,String auditState,String rejectReason,DialogCallBack<Medium> callback){
+        OkGo.<Medium>post(sUrls.URL_PREPROCESS_NEXTCHECKED)
                 .tag(sUrls.URL_PREPROCESS_NEXTCHECKED)
                 .cacheKey("cachePostKey")
                 .cacheMode(CacheMode.DEFAULT)
